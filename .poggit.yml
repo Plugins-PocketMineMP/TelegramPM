@@ -5,4 +5,5 @@ branches:
 projects:
   TelegramPM:
     path: ""
+    icon: Telegram.PNG
 ...

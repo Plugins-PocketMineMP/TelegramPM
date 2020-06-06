@@ -9,7 +9,6 @@ use pocketmine\permission\PermissionAttachment;
 use pocketmine\permission\PermissionAttachmentInfo;
 use pocketmine\plugin\Plugin;
 use pocketmine\Server;
-use pocketmine\utils\MainLogger;
 use pocketmine\utils\TextFormat;
 
 class TelegramBotCommandSender implements CommandSender{
@@ -24,7 +23,6 @@ class TelegramBotCommandSender implements CommandSender{
 
 	public function __construct(){
 		$this->perm = new PermissibleBase($this);
-		$this->lines = new \Threaded();
 	}
 
 	public function getLine() : ?string{
