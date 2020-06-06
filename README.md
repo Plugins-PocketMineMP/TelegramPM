@@ -42,6 +42,9 @@ If you see this, you are successfully logged in.
 
 Command can be used as `/execute <command>`.
 
+## Warning
+YOU SHOULD NOT LEAK YOUR BOT'S TOKEN OR NAME. PASSWORD ENTRY IS REQUIRED, BUT THIS IS NOT SAFE.
+
 ## Test
 
 ![](https://raw.githubusercontent.com/alvin0319/TelegramPM/master/images/image.PNG)
