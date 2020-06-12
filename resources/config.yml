@@ -9,3 +9,8 @@ token: ""
 chat-id: ~
 
 date: ~
+
+stat:
+  tps: []
+  first-joined: []
+  maximum-concurrent-users: 0

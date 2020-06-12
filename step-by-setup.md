@@ -29,3 +29,5 @@ And, you can use the command with `/execute <command>`.
 * A. chat-id is your telegram chat room ID, which will be used in daily reports to be supported in the future.
 > Q. The plugin says there is no password for user.
 * A. Make sure that you typed correctly for the correct YAML grammar, and that you entered it in a case-sensitive way.
+> Q. How can I get my chat-id?
+* A. login with `/login <password>` and do `/getmyid`

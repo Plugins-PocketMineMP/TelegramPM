@@ -11,9 +11,8 @@ class EventListener implements Listener{
 
 	public function onMessageReceive(MessageReceiveEvent $event) : void{
 		$message = $event->getMessage();
-		$messageId = $event->getMessageId();
+		$messageId = $event->getRoomId();
 		$id = $event->getId();
-		var_dump($event->getSender());
 		TelegramBot::getInstance()->setLastMessage($message);
 		if(substr($message, 0, 1) === "/"){
 			if(is_int(strpos($message, "/execute"))){
@@ -29,7 +28,7 @@ class EventListener implements Listener{
 						}
 					}
 					if(trim($command) !== ""){
-						TelegramBot::getInstance()->dispatchCommand($id, $command . " " . $args, $event->getMessageId());
+						TelegramBot::getInstance()->dispatchCommand($id, $command . " " . $args, $event->getRoomId());
 					}
 				}else{
 					TelegramBot::getInstance()->sendMessage("Please login with \"/login <password>\"", $id);
@@ -51,6 +50,12 @@ class EventListener implements Listener{
 					}
 				}else{
 					TelegramBot::getInstance()->sendMessage("Usage: /login <password>", $id);
+				}
+			}elseif(is_int(strpos($message, "/getmyid"))){
+				if(isset($this->loginUsers[$event->getSender()])){
+					TelegramBot::getInstance()->sendMessage("Your room id: " . $event->getId(), $id);
+				}else{
+					TelegramBot::getInstance()->sendMessage("Please login with \"/login <password>\"", $id);
 				}
 			}
 		}
