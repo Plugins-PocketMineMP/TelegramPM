@@ -3,23 +3,7 @@ A PocketMine-MP Plugin that connect PM Server <-> Telegram
 
 ## Setting
 
-```yaml
-allow-user: [] #This field is the ID of the Telegram user who can use this bot, ex) alvin0319
-#ex)
-#allow-user:
-# - alvin0319
-# - someuser
-
-passwords: [] #This field is where you set the password for the user.
-# ex)
-#passwords:
-# - alvin0319: mypassword
-# - someuser: password
-
-lastMessage: "" #This field should not be touched.
-
-token: "" #This field is where you put the bot's token.
-```
+See [Step by setup](https://github.com/alvin0319/TelegramPM/blob/master/step-by-setup.md)
 
 ## API
 > send message

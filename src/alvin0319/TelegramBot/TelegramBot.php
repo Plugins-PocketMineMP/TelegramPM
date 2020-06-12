@@ -60,6 +60,9 @@ class TelegramBot extends PluginBase{
 			$this->getServer()->getPluginManager()->disablePlugin($this);
 			return;
 		}
+		if(is_null($this->getConfig()->getNested("date", null))){
+			$this->getConfig()->setNested("date", intval(date("d")));
+		}
 		$this->sender = new TelegramBotCommandSender();
 		$this->token = $token;
 		$this->users = $users;
@@ -125,5 +128,14 @@ class TelegramBot extends PluginBase{
 
 	public function getPasswordFor(string $userName) : string{
 		return $this->getConfig()->getNested("passwords." . $userName, "");
+	}
+
+	public function checkDate() : void{
+		if($this->getConfig()->getNested("date", intval(date("d"))) !== intval(date("d"))){
+			$this->getConfig()->setNested("date", intval(date("d")));
+			if(is_int($id = $this->getConfig()->getNested("chat-id", null))){
+
+			}
+		}
 	}
 }
